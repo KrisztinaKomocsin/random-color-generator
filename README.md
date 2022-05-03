@@ -1,5 +1,7 @@
 # Random Color Generator
 
+** version 1.0.0**
+
 colors are picked randomly by users
 
 # Description
