@@ -1,14 +1,28 @@
 import chalk from 'chalk';
+import randomColor from 'randomcolor';
 
-let icon = '#'.repeat(31);
-const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+const hue = process.argv[2];
+const luminosity = process.argv[3];
 
-console.log(icon);
-console.log(icon);
-console.log(icon);
-console.log('#'.repeat(5) + ' '.repeat(21) + '#'.repeat(5));
-console.log(`#####       ${randomColor}       #####`);
-console.log('#'.repeat(5) + ' '.repeat(21) + '#'.repeat(5));
-console.log(icon);
-console.log(icon);
-console.log(icon);
+const color = randomColor({ hue: hue, luminosity: luminosity });
+
+/*let color = randomColor();
+
+if (!hue) {
+  color = randomColor();
+} else if (hue && !luminosity) {
+  color = randomColor({ hue: hue });
+} else {
+}
+color = randomColor({ hue: hue luminosity:luminosity});
+}*/
+
+console.log(chalk.hex(color).bold('###############################'));
+console.log(chalk.hex(color).bold('###############################'));
+console.log(chalk.hex(color).bold('###############################'));
+console.log(chalk.hex(color).bold('#####                     #####'));
+console.log(chalk.hex(color).bold(`#####     ${color}         #####`));
+console.log(chalk.hex(color).bold('#####                     #####'));
+console.log(chalk.hex(color).bold('###############################'));
+console.log(chalk.hex(color).bold('###############################'));
+console.log(chalk.hex(color).bold('###############################'));
